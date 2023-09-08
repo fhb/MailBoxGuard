@@ -112,7 +112,7 @@ void setup() {
       display.setFont(ArialMT_Plain_16);
       display.setTextAlignment(TEXT_ALIGN_CENTER);
       display.drawString(64, 20, "MailBox Guard");
-      display.drawString(64, 38, "RX " + String(BAND));
+      display.drawString(64, 38, "RX " + String(BAND)+" Mhz");
       display.display();
       delay(2000);
       display.clear();
