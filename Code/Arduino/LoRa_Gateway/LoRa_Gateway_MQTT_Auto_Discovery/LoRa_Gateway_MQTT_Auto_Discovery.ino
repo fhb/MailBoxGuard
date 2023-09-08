@@ -130,7 +130,7 @@ void setup() {
   display.setFont(ArialMT_Plain_16);
   display.setTextAlignment(TEXT_ALIGN_CENTER);
   display.drawString(64, 20, "LoRa Gateway");
-  display.drawString(64, 38, "RX " + String(BAND));
+  display.drawString(64, 38, "RX " + String(BAND/1000000));
   display.display();
   delay(2000);
   display.clear();
@@ -138,7 +138,7 @@ void setup() {
 
   SPI.begin(CONFIG_CLK, CONFIG_MISO, CONFIG_MOSI, CONFIG_NSS);
   LoRa.setPins(CONFIG_NSS, CONFIG_RST, CONFIG_DIO0);
-  Serial.println("Starting LoRa on " + String(BAND) + " MHz");
+  Serial.println("Starting LoRa on " + String(BAND/1000000) + " MHz");
   if (!LoRa.begin(BAND)) {
     Serial.println("Starting LoRa failed!");
     while (1);
